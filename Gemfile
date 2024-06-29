@@ -79,3 +79,5 @@ gem "faker", "~> 3.4"
 gem "kaminari", "~> 1.2"
 
 gem 'activestorage'
+
+gem 'jsonapi-resources'

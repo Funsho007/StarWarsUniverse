@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_29_183232) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_29_193606) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -63,6 +63,85 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_29_183232) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "films", force: :cascade do |t|
+    t.integer "film_id"
+    t.string "title"
+    t.integer "episode_id"
+    t.text "opening_crawl"
+    t.string "director"
+    t.string "producer"
+    t.date "release_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "films_people", id: false, force: :cascade do |t|
+    t.integer "person_id", null: false
+    t.integer "film_id", null: false
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.integer "person_id"
+    t.string "name"
+    t.integer "height"
+    t.integer "mass"
+    t.string "hair_color"
+    t.string "skin_color"
+    t.string "eye_color"
+    t.string "birth_year"
+    t.string "gender"
+    t.integer "planet_id"
+    t.integer "specie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "people_starships", id: false, force: :cascade do |t|
+    t.integer "person_id", null: false
+    t.integer "starship_id", null: false
+  end
+
+  create_table "people_vehicles", id: false, force: :cascade do |t|
+    t.integer "person_id", null: false
+    t.integer "vehicle_id", null: false
+  end
+
+  create_table "planets", force: :cascade do |t|
+    t.integer "planet_id"
+    t.string "name"
+    t.integer "diameter"
+    t.integer "population"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "species", force: :cascade do |t|
+    t.integer "species_id"
+    t.string "name"
+    t.integer "average_lifespan"
+    t.string "language"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "starships", force: :cascade do |t|
+    t.integer "starship_id"
+    t.string "name"
+    t.string "model"
+    t.string "manufacturer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "vehicles", force: :cascade do |t|
+    t.integer "vehicle_id"
+    t.string "name"
+    t.string "model"
+    t.string "manufacturer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
