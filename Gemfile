@@ -81,3 +81,11 @@ gem "kaminari", "~> 1.2"
 gem 'activestorage'
 
 gem 'jsonapi-resources'
+
+gem 'rest-client'
+
+gem 'httparty'
+
+# gem 'bootstrap', '~> 5.3.3'
+
+gem 'execjs'
