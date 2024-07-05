@@ -6,7 +6,7 @@ class Film < ApplicationRecord
 
   def self.search(term)
     if term
-      where('title ILIKE ? OR director ILIKE ? OR producer ILIKE ?', "%#{term}%", "%#{term}%", "%#{term}%")
+      where('LOWER(title) LIKE ? OR LOWER(director) LIKE ? OR LOWER(producer) LIKE ?', "%#{term.downcase}%", "%#{term.downcase}%", "%#{term.downcase}%")
     else
       all
     end

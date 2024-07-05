@@ -89,3 +89,7 @@ gem 'httparty'
 # gem 'bootstrap', '~> 5.3.3'
 
 gem 'execjs'
+
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
