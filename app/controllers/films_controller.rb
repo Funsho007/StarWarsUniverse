@@ -8,4 +8,10 @@ class FilmsController < ApplicationController
   def show
     @film = Film.find(params[:id])
   end
+  
+  def autocomplete
+    term = params[:term].downcase
+    films = Film.where('LOWER(title) LIKE ?', "%#{term}%").pluck(:title)
+    render json: films
+  end
 end
