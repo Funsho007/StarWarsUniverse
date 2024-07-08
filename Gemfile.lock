@@ -90,12 +90,18 @@ GEM
     arbre (1.7.0)
       activesupport (>= 3.0.0)
       ruby2_keywords (>= 0.0.2)
+    autoprefixer-rails (10.4.16.0)
+      execjs (~> 2)
     base64 (0.2.0)
     bcrypt (3.1.20)
     bigdecimal (3.1.8)
     bindex (0.8.1)
     bootsnap (1.18.3)
       msgpack (~> 1.2)
+    bootstrap (5.0.2)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 2.9.2, < 3)
+      sassc-rails (>= 2.0.0)
     builder (3.3.0)
     capybara (3.40.0)
       addressable
@@ -235,6 +241,7 @@ GEM
     nokogiri (1.16.6-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    popper_js (2.11.8)
     psych (5.1.2)
       stringio
     public_suffix (6.0.0)
@@ -382,6 +389,7 @@ DEPENDENCIES
   activeadmin (~> 3.2)
   activestorage
   bootsnap
+  bootstrap (~> 5.0.2)
   capybara
   debug
   devise (~> 4.9)

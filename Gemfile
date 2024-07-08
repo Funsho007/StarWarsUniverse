@@ -93,3 +93,4 @@ gem 'execjs'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
+gem 'bootstrap', '~> 5.0.2'
