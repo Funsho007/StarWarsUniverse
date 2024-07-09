@@ -1,6 +1,12 @@
 class Starship < ApplicationRecord
-  has_and_belongs_to_many :people
+  has_many :films
 
   validates :name, presence: true
-  validates :id, uniqueness: true
+  validates :model, presence: true
+  validates :manufacturer, presence: true
+  validates :cost_in_credits, numericality: { only_integer: true }
+
+  def self.ransackable_associations(auth_object = nil)
+    ["films"]
+  end
 end

@@ -1,10 +1,14 @@
 class Person < ApplicationRecord
+  belongs_to :species
   belongs_to :planet
-  belongs_to :species, optional: true
-  has_and_belongs_to_many :films
-  has_and_belongs_to_many :starships
-  has_and_belongs_to_many :vehicles
+  has_many :films, through: :characters
 
   validates :name, presence: true
-  validates :person_id, uniqueness: true
+  validates :height, numericality: true
+  validates :mass, numericality: true
+  validates :gender, presence: true
+
+  def self.ransackable_associations(auth_object = nil)
+    ["species", "planet", "films"]
+  end
 end
